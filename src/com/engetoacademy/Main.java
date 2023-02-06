@@ -24,14 +24,14 @@ public class Main {
     }
 
     public static void ukol5() {
-        double cena = 0.0; // Nastavíme do proměnné hodnotu 0
+        BigDecimal cena = BigDecimal.valueOf(0); // Nastavíme do proměnné hodnotu 0
         // Desetkrát přičteme hodnotu jedna desetina (0,1):
-        for (int i = 0; i < 10; i++) {
-            cena += 0.1 ;
+        for (BigDecimal i = BigDecimal.ZERO; i.compareTo(new BigDecimal(10)) < 0; i = i.add(BigDecimal.ONE)) {
+            cena = cena.add(BigDecimal.valueOf(0.1)) ;
                // operátor "+=" znamená: přičti ke stávající
                // hodnotě navíc 0.1
         }
-        System.out.println((double)Math.round(cena));
+        System.out.println(cena);
         // Má vypsat "1.0". Ale vypíše "0.9999" !!!
     }
 
@@ -60,15 +60,15 @@ public class Main {
                 System.out.println("Komentáře odstraníš klávesovou "
                         +"zkratkou <Ctrl>+</> - použij lomítko "
                         +"na numerické klávesnici.");
-        ukol1();
-        ukol2();
-        ukol3();
-        ukol4();
+//        ukol1();
+//        ukol2();
+//        ukol3();
+//        ukol4();
         ukol5();
-        ukol6();
-        ukol7();
-        ukol8();
-        ukol9();
+//        ukol6();
+//        ukol7();
+//        ukol8();
+//        ukol9();
             }
 
     }
